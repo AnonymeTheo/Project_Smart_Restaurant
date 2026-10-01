@@ -29,21 +29,98 @@ public class Hauptfenster extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        UeberschriftLabel = new javax.swing.JLabel();
+        TischeButton = new javax.swing.JButton();
+        MitarbeiterButton = new javax.swing.JButton();
+        ZutatenButton = new javax.swing.JButton();
+        StatistikenButton = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        UeberschriftLabel.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        UeberschriftLabel.setText("Willkommen, Admin");
+
+        TischeButton.setText("Tische verwalten");
+        TischeButton.addActionListener(this::TischeButtonActionPerformed);
+
+        MitarbeiterButton.setText("Mitarbeiter verwalten");
+        MitarbeiterButton.addActionListener(this::MitarbeiterButtonActionPerformed);
+
+        ZutatenButton.setText("Zutaten verwalten");
+        ZutatenButton.addActionListener(this::ZutatenButtonActionPerformed);
+
+        StatistikenButton.setText("Statistiken");
+        StatistikenButton.addActionListener(this::StatistikenButtonActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(MitarbeiterButton, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                    .addComponent(ZutatenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TischeButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StatistikenButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(184, Short.MAX_VALUE)
+                .addComponent(UeberschriftLabel)
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(UeberschriftLabel)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TischeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MitarbeiterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ZutatenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(StatistikenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TischeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TischeButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TischeButtonActionPerformed
+
+    private void ZutatenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZutatenButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ZutatenButtonActionPerformed
+
+    private void StatistikenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatistikenButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StatistikenButtonActionPerformed
+
+    private void MitarbeiterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MitarbeiterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MitarbeiterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,5 +160,12 @@ public class Hauptfenster extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton MitarbeiterButton;
+    private javax.swing.JButton StatistikenButton;
+    private javax.swing.JButton TischeButton;
+    private javax.swing.JLabel UeberschriftLabel;
+    private javax.swing.JButton ZutatenButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
