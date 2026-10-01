@@ -1,0 +1,88 @@
+
+-- erzeuge eine Zutat Tabelle
+CREATE TABLE Zutat (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Bezeichnung VARCHAR(150),
+    Bestand INTEGER,
+    Allergien VARCHAR(150)
+);
+
+
+-- erzeuge eine MitarbeiterRolle Tabelle
+CREATE TABLE MitarbeiterRolle (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Beschreibung VARCHAR(150)
+);
+
+
+-- erzeuge eine Tisch Tabelle
+CREATE TABLE Tisch (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Kapazität INTEGER,
+    Belegt BOOLEAN
+);
+
+
+-- erzeuge eine Gericht Tabelle
+CREATE TABLE Gericht (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Bezeichnung VARCHAR(150),
+    ZubereitungsZeit INTEGER,
+    Preis INTEGER
+);
+
+
+-- erzeuge eine Mitarbeiter Tabelle
+CREATE TABLE Mitarbeiter (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name VARCHAR(150),
+    Beschäftigt BOOLEAN,
+    MitarbeiterRolleID INTEGER,
+    FOREIGN KEY (MitarbeiterRolleID) REFERENCES MitarbeiterRolle(id)
+);
+
+
+-- erzeuge eine Bestellzustand Tabelle
+CREATE TABLE Bestellzustand (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Beschreibung VARCHAR(150),
+    ÄnderungZeit DATE
+);
+
+
+-- erzeuge eine Bestellung Tabelle
+CREATE TABLE Bestellung (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Kundenwuesche VARCHAR(150),
+    BestellzustandID INTEGER,
+    Priorität INTEGER,
+    Bewertung INTEGER,
+    DatumZeit DATE,
+    TischID INTEGER,
+    MitarbeiterID INTEGER,
+    FOREIGN KEY (BestellzustandID) REFERENCES Bestellzustand(id),
+    FOREIGN KEY (TischID) REFERENCES Tisch(id),
+    FOREIGN KEY (MitarbeiterID) REFERENCES Mitarbeiter(id)
+);
+
+
+-- erzeuge eine Bestellposition Tabelle
+CREATE TABLE Bestellposition (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    BestellungID INTEGER,
+    GerichtID INTEGER,
+    Menge INTEGER,
+    FOREIGN KEY (BestellungID) REFERENCES Bestellung(id),
+    FOREIGN KEY (GerichtID) REFERENCES Gericht(id)
+);
+
+
+-- erzeuge eine GerichtZutatenposition Tabelle
+CREATE TABLE GerichtZutatenposition (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    ZutatID INTEGER,
+    GerichtID INTEGER,
+    Menge INTEGER,
+    FOREIGN KEY (ZutatID) REFERENCES Zutat(id),
+    FOREIGN KEY (GerichtID) REFERENCES Gericht(id)
+);
