@@ -4,6 +4,8 @@
  */
 package shortcut;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author lucas
@@ -107,21 +109,28 @@ public class Hauptfenster extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TischeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TischeButtonActionPerformed
-        // TODO add your handling code here:
+        Tischverwaltung tischForm = new Tischverwaltung();
+        callForm(tischForm);
     }//GEN-LAST:event_TischeButtonActionPerformed
 
     private void ZutatenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZutatenButtonActionPerformed
-        // TODO add your handling code here:
+        Zutatenverwaltung zutatenForm = new Zutatenverwaltung();
+        callForm(zutatenForm);
     }//GEN-LAST:event_ZutatenButtonActionPerformed
 
     private void StatistikenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatistikenButtonActionPerformed
-        // TODO add your handling code here:
+        Statistiken statistikForm = new Statistiken();
+        callForm(statistikForm);
     }//GEN-LAST:event_StatistikenButtonActionPerformed
 
     private void MitarbeiterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MitarbeiterButtonActionPerformed
-        // TODO add your handling code here:
+        Mitarbeiterverwaltung mitarbeiterForm = new Mitarbeiterverwaltung();
+        callForm(mitarbeiterForm);
     }//GEN-LAST:event_MitarbeiterButtonActionPerformed
 
+    private void callForm(JFrame form) {
+        form.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */

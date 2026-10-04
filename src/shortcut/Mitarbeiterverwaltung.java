@@ -17,6 +17,7 @@ public class Mitarbeiterverwaltung extends javax.swing.JFrame {
      */
     public Mitarbeiterverwaltung() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

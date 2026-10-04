@@ -17,6 +17,7 @@ public class Tischverwaltung extends javax.swing.JFrame {
      */
     public Tischverwaltung() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

@@ -4,6 +4,9 @@
  */
 package shortcut;
 
+import javax.swing.JFrame;
+
+
 /**
  *
  * @author lucas
@@ -14,7 +17,8 @@ public class Shortcut {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Hauptfenster mainForm = new Hauptfenster(null, false);
+       mainForm.setVisible(true);
     }
     
 }

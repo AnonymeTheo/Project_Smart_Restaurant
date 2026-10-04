@@ -17,6 +17,7 @@ public class Zutatenverwaltung extends javax.swing.JFrame {
      */
     public Zutatenverwaltung() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**

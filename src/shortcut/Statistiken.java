@@ -15,8 +15,9 @@ public class Statistiken extends javax.swing.JFrame {
     /**
      * Creates new form Statistiken
      */
-    public Statistiken() {
+    public Statistiken() { 
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
