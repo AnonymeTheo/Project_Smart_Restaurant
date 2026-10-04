@@ -1,16 +1,21 @@
 package backend;
 
-import java.util.HashMap;
-import java.util.HashSet;
+public class Gericht {
 
-public class Gericht{
-    public String name;
-    public float Preis;
-    public HashMap<String, Float> zutaten;
+    public int id;
+    public String bezeichnung;
+    public int zubereitungsZeit;
+    public int preis;
 
-    public Gericht(String name, float preis, HashMap<String, Float> zutaten){
-        this.name = name;
-        Preis = preis;
-        this.zutaten = zutaten;
+    public Gericht(
+            int id,
+            String bezeichnung,
+            int zubereitungsZeit,
+            int preis) {
+
+        this.id = id;
+        this.bezeichnung = bezeichnung;
+        this.zubereitungsZeit = zubereitungsZeit;
+        this.preis = preis;
     }
 }
