@@ -1,13 +1,18 @@
 package backend;
 
-public class Tisch{
-    public int nummer;
-    public int größe;
-    public Status status;
+public class Tisch {
 
-    public Tisch(int nummer, int größe, Status status){
-        this.nummer = nummer;
-        this.größe = größe;
-        this.status = status;
+    public int id;
+    public int kapazität;
+    public boolean belegt;
+
+    public Tisch(
+            int id,
+            int kapazität,
+            boolean belegt) {
+
+        this.id = id;
+        this.kapazität = kapazität;
+        this.belegt = belegt;
     }
 }
