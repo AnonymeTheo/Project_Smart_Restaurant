@@ -1,19 +1,35 @@
 package backend;
 
-public class Bestellung{
-    public Gericht gericht;
-    public Mitarbeiter koch;
-    public BestellungsZustand status;
-    public int bewertung;
-    public Tisch tisch;
-    public String sonderWünsche;
+import java.time.LocalDate;
 
-    public Bestellung(Gericht gericht, Mitarbeiter koch, BestellungsZustand status, int bewertung, Tisch tisch, String sonderWünsche){
-        this.gericht = gericht;
-        this.koch = koch;
+public class Bestellung {
+
+    public int id;
+    public String kundenwuensche;
+    public BestellungsZustand status;
+    public int prioritaet;
+    public int bewertung;
+    public LocalDate datumZeit;
+    public Tisch tisch;
+    public Mitarbeiter mitarbeiter;
+
+    public Bestellung(
+            int id,
+            String kundenwuensche,
+            BestellungsZustand status,
+            int prioritaet,
+            int bewertung,
+            LocalDate datumZeit,
+            Tisch tisch,
+            Mitarbeiter mitarbeiter) {
+
+        this.id = id;
+        this.kundenwuensche = kundenwuensche;
         this.status = status;
+        this.prioritaet = prioritaet;
         this.bewertung = bewertung;
+        this.datumZeit = datumZeit;
         this.tisch = tisch;
-        this.sonderWünsche = sonderWünsche;
+        this.mitarbeiter = mitarbeiter;
     }
 }
