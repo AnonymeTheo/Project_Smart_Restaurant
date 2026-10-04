@@ -1,13 +1,21 @@
 package backend;
 
-public class Zutat{
-    public String bezeichnung;
-    public float menge;
-    public char[] allergene;
+public class Zutat {
 
-    public Zutat(String bezeichnung, float menge, char[] allergene){
+    public int id;
+    public String bezeichnung;
+    public int bestand;
+    public String allergien;
+
+    public Zutat(
+            int id,
+            String bezeichnung,
+            int bestand,
+            String allergien) {
+
+        this.id = id;
         this.bezeichnung = bezeichnung;
-        this.menge = menge;
-        this.allergene = allergene;
+        this.bestand = bestand;
+        this.allergien = allergien;
     }
 }
