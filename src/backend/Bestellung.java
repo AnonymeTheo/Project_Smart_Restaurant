@@ -1,11 +1,12 @@
 package backend;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 
 public class Bestellung {
 
     public int id;
-    public Gericht gericht;
+    public HashMap<Gericht,Integer> gericht;
     public String kundenwuensche;
     public BestellungsZustand status;
     public int prioritaet;
@@ -16,7 +17,7 @@ public class Bestellung {
 
     public Bestellung(
             int id,
-            Gericht gericht,
+            HashMap<Gericht,Integer> gericht,
             String kundenwuensche,
             BestellungsZustand status,
             int prioritaet,
