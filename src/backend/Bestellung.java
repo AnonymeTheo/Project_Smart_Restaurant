@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 public class Bestellung {
 
     public int id;
+    public Gericht gericht;
     public String kundenwuensche;
     public BestellungsZustand status;
     public int prioritaet;
@@ -15,6 +16,7 @@ public class Bestellung {
 
     public Bestellung(
             int id,
+            Gericht gericht,
             String kundenwuensche,
             BestellungsZustand status,
             int prioritaet,
@@ -24,6 +26,7 @@ public class Bestellung {
             Mitarbeiter mitarbeiter) {
 
         this.id = id;
+        this.gericht = gericht;
         this.kundenwuensche = kundenwuensche;
         this.status = status;
         this.prioritaet = prioritaet;

@@ -1,11 +1,14 @@
 package backend;
 
+import java.util.HashMap;
+
 public class Gericht {
 
     public int id;
     public String bezeichnung;
     public int zubereitungsZeit;
     public int preis;
+    public HashMap<Zutat,Float> zutaten;
 
     public Gericht(
             int id,
@@ -17,5 +20,6 @@ public class Gericht {
         this.bezeichnung = bezeichnung;
         this.zubereitungsZeit = zubereitungsZeit;
         this.preis = preis;
+        this.zutaten = new HashMap<>();
     }
 }
