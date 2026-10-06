@@ -59,13 +59,14 @@ public class Tischverwaltung extends javax.swing.JFrame {
 
         UeberschriftLabel.setText("Tischverwaltung");
 
+        Tisch3Panel.setBackground(new java.awt.Color(51, 255, 51));
         Tisch3Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Tisch3NameLabel.setText("Tisch 1");
+        Tisch3NameLabel.setText("Tisch 3");
 
         Tisch3StatusLabel.setText("frei");
 
-        Tisch3PersonenLabel.setText("4 Personen");
+        Tisch3PersonenLabel.setText("2 Personen");
 
         javax.swing.GroupLayout Tisch3PanelLayout = new javax.swing.GroupLayout(Tisch3Panel);
         Tisch3Panel.setLayout(Tisch3PanelLayout);
@@ -96,6 +97,7 @@ public class Tischverwaltung extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Tisch1Panel.setBackground(new java.awt.Color(51, 255, 51));
         Tisch1Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel5.setText("Tisch 1");
@@ -133,9 +135,10 @@ public class Tischverwaltung extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Tisch2Panel.setBackground(new java.awt.Color(51, 255, 51));
         Tisch2Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Tisch2NameLabel.setText("Tisch 1");
+        Tisch2NameLabel.setText("Tisch 2");
 
         Tisch2StatusLabel.setText("frei");
 
@@ -170,11 +173,12 @@ public class Tischverwaltung extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Tisch4Panel.setBackground(new java.awt.Color(255, 51, 51));
         Tisch4Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Tisch4NameLabel.setText("Tisch 1");
+        Tisch4NameLabel.setText("Tisch 4");
 
-        Tisch4StatusLabel.setText("frei");
+        Tisch4StatusLabel.setText("belegt");
 
         Tisch4PersonenLabel.setText("4 Personen");
 
@@ -185,14 +189,13 @@ public class Tischverwaltung extends javax.swing.JFrame {
             .addGroup(Tisch4PanelLayout.createSequentialGroup()
                 .addGroup(Tisch4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Tisch4PanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(Tisch4NameLabel))
-                    .addGroup(Tisch4PanelLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(Tisch4PersonenLabel))
                     .addGroup(Tisch4PanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Tisch4StatusLabel)))
+                        .addGap(28, 28, 28)
+                        .addGroup(Tisch4PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Tisch4StatusLabel)
+                            .addComponent(Tisch4NameLabel))))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         Tisch4PanelLayout.setVerticalGroup(
@@ -207,13 +210,14 @@ public class Tischverwaltung extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Tisch5Panel.setBackground(new java.awt.Color(51, 255, 51));
         Tisch5Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Tisch5NameLabel.setText("Tisch 1");
+        Tisch5NameLabel.setText("Tisch 5");
 
         Tisch5StatusLabel.setText("frei");
 
-        Tisch5PersonenLabel.setText("4 Personen");
+        Tisch5PersonenLabel.setText("7 Personen");
 
         javax.swing.GroupLayout Tisch5PanelLayout = new javax.swing.GroupLayout(Tisch5Panel);
         Tisch5Panel.setLayout(Tisch5PanelLayout);
@@ -244,9 +248,10 @@ public class Tischverwaltung extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        Tisch6Panel.setBackground(new java.awt.Color(51, 255, 51));
         Tisch6Panel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Tisch6NameLabel.setText("Tisch 1");
+        Tisch6NameLabel.setText("Tisch 6");
 
         Tsich6StatusLabel.setText("frei");
 

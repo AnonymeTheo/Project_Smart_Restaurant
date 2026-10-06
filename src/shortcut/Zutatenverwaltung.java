@@ -39,15 +39,23 @@ public class Zutatenverwaltung extends javax.swing.JFrame {
 
         ZutatenTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Paprika", "27", "A,1,3"},
+                {"Tomate", "361", "B"},
+                {"Gurke", "170", "D"},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Name", "Anzahl", "Allergien"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(ZutatenTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

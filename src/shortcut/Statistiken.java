@@ -50,29 +50,30 @@ public class Statistiken extends javax.swing.JFrame {
 
         UmsatzbeschreibungLabel.setText("Umsatz");
 
-        UmsatzLabel.setText("Euro");
+        UmsatzLabel.setText("+ 4.460.00 €");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UmsatzbeschreibungLabel)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(62, 62, 62)
+                        .addComponent(UmsatzbeschreibungLabel))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
                         .addComponent(UmsatzLabel)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(UmsatzbeschreibungLabel)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(UmsatzLabel)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -82,7 +83,7 @@ public class Statistiken extends javax.swing.JFrame {
         ZufriedenheitsbeschreibungLabel.setMinimumSize(new java.awt.Dimension(175, 106));
         ZufriedenheitsbeschreibungLabel.setName(""); // NOI18N
 
-        KundenzufriedenheitLabel.setText("Prozent");
+        KundenzufriedenheitLabel.setText("77,3 %");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -95,14 +96,14 @@ public class Statistiken extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(KundenzufriedenheitLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ZufriedenheitsbeschreibungLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(KundenzufriedenheitLabel)
                 .addGap(30, 30, 30))
         );
@@ -111,7 +112,7 @@ public class Statistiken extends javax.swing.JFrame {
 
         GerichtbeschreibungLabel.setText("Meistverkauftes Gericht");
 
-        GerichtLabel.setText("Gericht");
+        GerichtLabel.setText("Aperol Spritz");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -125,7 +126,7 @@ public class Statistiken extends javax.swing.JFrame {
                         .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(GerichtLabel)
-                        .addGap(63, 63, 63))))
+                        .addGap(46, 46, 46))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,15 +140,23 @@ public class Statistiken extends javax.swing.JFrame {
 
         UmsatzWocheTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                { new Integer(33), "1.000,00 €", "+ 100%"},
+                { new Integer(32), "500,00 €", "- 25 %"},
+                { new Integer(31), "625,00 €", "+ 40 %"},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Kalenderwoche", "Umsatz", "Änderung gegenüber letzter KW"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(UmsatzWocheTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

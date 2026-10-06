@@ -81,6 +81,9 @@
     </Component>
     <Container class="javax.swing.JPanel" name="Tisch3Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="33" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -127,7 +130,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Tisch3NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tisch 1"/>
+            <Property name="text" type="java.lang.String" value="Tisch 3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch3StatusLabel">
@@ -137,13 +140,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch3PersonenLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="4 Personen"/>
+            <Property name="text" type="java.lang.String" value="2 Personen"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="Tisch1Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="33" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -207,6 +213,9 @@
     </Container>
     <Container class="javax.swing.JPanel" name="Tisch2Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="33" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -253,7 +262,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Tisch2NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tisch 1"/>
+            <Property name="text" type="java.lang.String" value="Tisch 2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch2StatusLabel">
@@ -270,6 +279,9 @@
     </Container>
     <Container class="javax.swing.JPanel" name="Tisch4Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="ff" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -283,16 +295,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="Tisch4NameLabel" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="Tisch4PersonenLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="Tisch4StatusLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="Tisch4StatusLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="Tisch4NameLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
@@ -316,12 +327,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Tisch4NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tisch 1"/>
+            <Property name="text" type="java.lang.String" value="Tisch 4"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch4StatusLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="frei"/>
+            <Property name="text" type="java.lang.String" value="belegt"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch4PersonenLabel">
@@ -333,6 +344,9 @@
     </Container>
     <Container class="javax.swing.JPanel" name="Tisch5Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="33" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -379,7 +393,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Tisch5NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tisch 1"/>
+            <Property name="text" type="java.lang.String" value="Tisch 5"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch5StatusLabel">
@@ -389,13 +403,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="Tisch5PersonenLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="4 Personen"/>
+            <Property name="text" type="java.lang.String" value="7 Personen"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="Tisch6Panel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="ff" red="33" type="rgb"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder/>
@@ -442,7 +459,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="Tisch6NameLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Tisch 1"/>
+            <Property name="text" type="java.lang.String" value="Tisch 6"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Tsich6StatusLabel">
