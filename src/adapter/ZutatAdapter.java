@@ -7,10 +7,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ZutatAdapter {
 
-    // Zutat anhand der ID aus der Datenbank lesen
+    // Zutat anhand der ID auslesen
     public Zutat findeNachId(int id) {
 
         String sql = "SELECT * FROM Zutat WHERE id = ?";
@@ -46,12 +47,57 @@ public class ZutatAdapter {
     }
 
 
-    // Neue Zutat in der Datenbank anlegen
+    // Neue Zutat anlegen und erzeugte ID übernehmen
     public boolean anlegen(Zutat zutat) {
 
         String sql = "INSERT INTO Zutat "
                 + "(Bezeichnung, Bestand, Allergien) "
                 + "VALUES (?, ?, ?)";
+
+        try (
+                Connection connection = DatabaseConnection.connect();
+                PreparedStatement statement =
+                        connection.prepareStatement(
+                                sql,
+                                Statement.RETURN_GENERATED_KEYS
+                        )
+        ) {
+
+            statement.setString(1, zutat.bezeichnung);
+            statement.setInt(2, zutat.bestand);
+            statement.setString(3, zutat.allergien);
+
+            int betroffeneZeilen = statement.executeUpdate();
+
+            if (betroffeneZeilen != 1) {
+                return false;
+            }
+
+            try (ResultSet keys = statement.getGeneratedKeys()) {
+
+                if (keys.next()) {
+                    zutat.id = keys.getInt(1);
+                    return true;
+                }
+            }
+
+        } catch (SQLException e) {
+            System.err.println(
+                    "ERROR beim Anlegen der Zutat: "
+                            + e.getMessage()
+            );
+        }
+
+        return false;
+    }
+
+
+    // Vorhandene Zutat aktualisieren
+    public boolean aktualisieren(Zutat zutat) {
+
+        String sql = "UPDATE Zutat "
+                + "SET Bezeichnung = ?, Bestand = ?, Allergien = ? "
+                + "WHERE id = ?";
 
         try (
                 Connection connection = DatabaseConnection.connect();
@@ -61,14 +107,38 @@ public class ZutatAdapter {
             statement.setString(1, zutat.bezeichnung);
             statement.setInt(2, zutat.bestand);
             statement.setString(3, zutat.allergien);
+            statement.setInt(4, zutat.id);
 
-            int betroffeneZeilen = statement.executeUpdate();
-
-            return betroffeneZeilen == 1;
+            return statement.executeUpdate() == 1;
 
         } catch (SQLException e) {
             System.err.println(
-                    "ERROR beim Anlegen der Zutat: "
+                    "ERROR beim Aktualisieren der Zutat: "
+                            + e.getMessage()
+            );
+
+            return false;
+        }
+    }
+
+
+    // Zutat anhand der ID löschen
+    public boolean loeschen(int id) {
+
+        String sql = "DELETE FROM Zutat WHERE id = ?";
+
+        try (
+                Connection connection = DatabaseConnection.connect();
+                PreparedStatement statement = connection.prepareStatement(sql)
+        ) {
+
+            statement.setInt(1, id);
+
+            return statement.executeUpdate() == 1;
+
+        } catch (SQLException e) {
+            System.err.println(
+                    "ERROR beim Löschen der Zutat: "
                             + e.getMessage()
             );
 
