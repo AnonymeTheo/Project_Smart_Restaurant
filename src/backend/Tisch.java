@@ -2,16 +2,16 @@ package backend;
 
 public class Tisch {
 
-    public int id;
+    public int nummer;
     public int kapazität;
-    public boolean belegt;
+    public TischStatus belegt;
 
     public Tisch(
-            int id,
+            int nummer,
             int kapazität,
-            boolean belegt) {
+            TischStatus belegt) {
 
-        this.id = id;
+        this.nummer = nummer;
         this.kapazität = kapazität;
         this.belegt = belegt;
     }
