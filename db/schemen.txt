@@ -4,7 +4,15 @@ CREATE TABLE Zutat (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Bezeichnung VARCHAR(150),
     Bestand INTEGER,
-    Allergien VARCHAR(150)
+    AllergieID INTEGER,
+    FOREIGN KEY (AllergieID) REFERENCES Allergie(id)
+);
+
+
+-- erzeuge eine Zutat Tabelle
+CREATE TABLE Allergie (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Beschreibung VARCHAR(150)
 );
 
 
