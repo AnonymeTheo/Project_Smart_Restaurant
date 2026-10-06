@@ -1,6 +1,6 @@
 package backend;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Bestellung {
 
@@ -8,8 +8,8 @@ public class Bestellung {
     public String kundenwuensche;
     public BestellungsZustand status;
     public int prioritaet;
-    public int bewertung;
-    public LocalDate datumZeit;
+    public Integer bewertung;
+    public LocalDateTime datumZeit;
     public Tisch tisch;
     public Mitarbeiter mitarbeiter;
 
@@ -18,8 +18,8 @@ public class Bestellung {
             String kundenwuensche,
             BestellungsZustand status,
             int prioritaet,
-            int bewertung,
-            LocalDate datumZeit,
+            Integer bewertung,
+            LocalDateTime datumZeit,
             Tisch tisch,
             Mitarbeiter mitarbeiter) {
 

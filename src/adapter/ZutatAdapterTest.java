@@ -1,5 +1,6 @@
 package adapter;
 
+import backend.Allergie;
 import backend.Zutat;
 
 public class ZutatAdapterTest {
@@ -8,16 +9,23 @@ public class ZutatAdapterTest {
 
         ZutatAdapter adapter = new ZutatAdapter();
 
-        // 1. Testzutat erstellen
+        // Allergie mit ID 1 = "A"
+        // Diese existiert bereits in unserer Datenbank.
+        Allergie testAllergie = new Allergie(
+                1,
+                "A"
+        );
+
+        // Testzutat erstellen
         Zutat testZutat = new Zutat(
                 0,
                 "Testzutat",
                 50,
-                "Keine"
+                testAllergie
         );
 
 
-        // 2. ANLEGEN testen
+        // 1. ANLEGEN
         if (!adapter.anlegen(testZutat)) {
             System.err.println(
                     "ERROR: Testzutat konnte nicht angelegt werden."
@@ -25,33 +33,44 @@ public class ZutatAdapterTest {
             return;
         }
 
-        // SQLite hat jetzt die echte ID in testZutat.id geschrieben
 
-
-        // 3. AUSLESEN testen
+        // 2. AUSLESEN
         Zutat geleseneZutat =
                 adapter.findeNachId(testZutat.id);
 
         if (geleseneZutat == null) {
             System.err.println(
-                    "ERROR: Angelegte Zutat konnte nicht gefunden werden."
+                    "ERROR: Testzutat konnte nicht gefunden werden."
             );
             return;
         }
 
 
-        // 4. AKTUALISIEREN testen
+        // 3. Prüfen, ob die Daten korrekt gelesen wurden
+        if (!geleseneZutat.bezeichnung.equals("Testzutat")
+                || geleseneZutat.bestand != 50
+                || geleseneZutat.allergie == null
+                || geleseneZutat.allergie.id != 1) {
+
+            System.err.println(
+                    "ERROR: Testzutat wurde nicht korrekt ausgelesen."
+            );
+            return;
+        }
+
+
+        // 4. AKTUALISIEREN
         geleseneZutat.bestand = 100;
 
         if (!adapter.aktualisieren(geleseneZutat)) {
             System.err.println(
-                    "ERROR: Zutat konnte nicht aktualisiert werden."
+                    "ERROR: Testzutat konnte nicht aktualisiert werden."
             );
             return;
         }
 
 
-        // 5. Änderung überprüfen
+        // 5. Änderung kontrollieren
         Zutat aktualisierteZutat =
                 adapter.findeNachId(testZutat.id);
 
@@ -65,7 +84,7 @@ public class ZutatAdapterTest {
         }
 
 
-        // 6. LÖSCHEN testen
+        // 6. LÖSCHEN
         if (!adapter.loeschen(testZutat.id)) {
             System.err.println(
                     "ERROR: Testzutat konnte nicht gelöscht werden."
@@ -74,7 +93,7 @@ public class ZutatAdapterTest {
         }
 
 
-        // 7. Prüfen, ob sie wirklich gelöscht wurde
+        // 7. Prüfen, ob wirklich gelöscht wurde
         if (adapter.findeNachId(testZutat.id) != null) {
             System.err.println(
                     "ERROR: Testzutat ist nach dem Löschen noch vorhanden."

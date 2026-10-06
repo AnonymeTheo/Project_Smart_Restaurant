@@ -1,17 +1,19 @@
+
+
 package backend;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class BestellungsZustand {
 
     public int id;
     public String beschreibung;
-    public LocalDate letzteÄnderung;
+    public LocalDateTime letzteÄnderung;
 
     public BestellungsZustand(
             int id,
             String beschreibung,
-            LocalDate letzteÄnderung) {
+            LocalDateTime letzteÄnderung) {
 
         this.id = id;
         this.beschreibung = beschreibung;
