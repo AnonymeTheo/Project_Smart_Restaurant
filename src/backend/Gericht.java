@@ -14,12 +14,13 @@ public class Gericht {
             int id,
             String bezeichnung,
             int zubereitungsZeit,
-            int preis) {
+            int preis,
+            HashMap<Zutat,Float> zutaten) {
 
         this.id = id;
         this.bezeichnung = bezeichnung;
         this.zubereitungsZeit = zubereitungsZeit;
         this.preis = preis;
-        this.zutaten = new HashMap<>();
+        this.zutaten = zutaten;
     }
 }
