@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Bestellung {
 
     public int id;
+    public Gericht gericht;
     public String kundenwuensche;
     public BestellungsZustand status;
     public int prioritaet;
