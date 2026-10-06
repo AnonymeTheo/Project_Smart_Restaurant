@@ -16,6 +16,7 @@ public class Bestellung {
 
     public Bestellung(
             int id,
+            Gericht gericht,
             String kundenwuensche,
             BestellungsZustand status,
             int prioritaet,
@@ -25,6 +26,7 @@ public class Bestellung {
             Mitarbeiter mitarbeiter) {
 
         this.id = id;
+        this.gericht = gericht;
         this.kundenwuensche = kundenwuensche;
         this.status = status;
         this.prioritaet = prioritaet;
